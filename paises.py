@@ -1,35 +1,31 @@
 paises = {
-    "Alemania": {
+    0: {
+        "nombre": "Alemania",
         "atq": ["T. Müller", "T. Werner"],
         "def": ["M. Ginter", "Rudiger"],
         "arquero": "Neuer",
-        "grupo": "H",
-        "puntos": 0,
-        "goles": 0,
+        "datos": ("H", 0, 0)
     },
-    "Brasil": {
+    1: {
+        "nombre": "Brasil",
         "atq": ["Neymar Jr.", "Vini Jr."], 
         "def": ["Thiago Silva", "E. Militao"], 
         "arquero": "Alisson",
-        "grupo": "H",
-        "puntos": 0,
-        "goles": 0,
+        "datos": ("H", 0, 0)
     },
-    "Belgica": {
+    2: {
+        "nombre": "Belgica",
         "atq": ["Kevin De Bruyne", "Eden Hazard"],
         "def": ["T. Meunier", "J. Denayer"],
         "arquero": "Curtois",
-        "grupo": "H",
-        "puntos": 0,
-        "goles": 0,
+        "datos": ("H", 0, 0)
     },
-    "Argentina": {
+    3: {
+        "nombre": "Argentina",
         "atq": ["L. Messi", "Lautaro Martinez"],
         "def": ["Otamendi", "Foyth"],
         "arquero": "Dibu Martinez",
-        "grupo": "H",
-        "puntos": 0,
-        "goles": 0,
+        "datos": ("H", 0, 0)
     },
 }
 
@@ -37,10 +33,14 @@ paises = {
 # for pais in paises:
 #     print(pais)
 #     print(paises[pais])
-#     print(paises[pais]["jugadores"])
-#     print(paises[pais]["jugadores"][0])
+#     # print(paises[pais]["jugadores"])
+#     # print(paises[pais]["jugadores"][0])
+#     print(paises[pais]["datos"][0])
 #     print()
 
+
+# for i in range(len(paises)):
+#     print(f'{paises[i]["datos"][1]}')
 
 # for pais, datos in paises.items():
 #     print("Jugador de {}: {}".format(pais, datos["jugadores"][0]))

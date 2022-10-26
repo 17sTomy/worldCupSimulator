@@ -1,11 +1,11 @@
 import paises
+import funciones
 
 SELECCIONES = paises.paises
+fecha = 1
+seleccion = ""
+proximoRival = ""
 
-for pais in SELECCIONES:
-    print(pais)
-    print(SELECCIONES[pais])
-    print(SELECCIONES[pais]["jugadores"])
-    print(SELECCIONES[pais]["jugadores"][0])
-    print(SELECCIONES[pais]["jugadores"])
-    print()
+grupoH = funciones.crearGrupo(SELECCIONES, "H")
+funciones.imprimirGrupo(grupoH)
+
