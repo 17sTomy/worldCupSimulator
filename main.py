@@ -3,8 +3,8 @@ import funciones
 
 SELECCIONES = paises.paises
 fecha = 1
-seleccion = ""
-proximoRival = ""
+seleccion = None
+proximoRival = None
 
 grupoH = funciones.crearGrupo(SELECCIONES, "H")
 funciones.imprimirGrupo(grupoH)

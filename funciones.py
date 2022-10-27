@@ -16,6 +16,7 @@ def ejectProgressBar():
         if i == 30:
             print(barraProgreso)
 
+
 def crearGrupo(diccionario, grupo):
     matriz = [[],[],[],[],[]]
     elegidos = []
