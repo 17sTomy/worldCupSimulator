@@ -5,7 +5,7 @@ frases_atq = [
     "Avanzó con demasiada soltura",  
     "La distribuye con categoría"
 ]
-frases_def = [
+frases_dfc = [
     "Le saca la pelota con firmeza", 
     "Lo paró con clase", 
     "Lo intercepta con justeza", 
@@ -17,9 +17,10 @@ frases_atajas = [
     "Los reflejos del gato son altas ", 
     "La estirada del arquero es perfecta" 
 ]
-frases_goles = [
-    "La mando a un lugar perfecto",
-    "Ll tiro fue preciso", 
-    "La colocó como con la mano", 
-    "La pelota entró en un lugar incalcanzable"
+frases_gol = [
+    "GOOOOOOOL!!!!",
+    "GOOLAAAZOOOO!!!!",
+    "INALCANZABLE PARA EL ARQUERO, QUE GOLAZO!!!!",
+    "El tiro fue preciso... LA MANDO A CLAVAR!", 
+    "SISI CANTALOOO GOOOL!!!"
 ]
