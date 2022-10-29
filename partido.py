@@ -41,6 +41,10 @@ def partido(miEquipo, rival, diccionario):
         while index < 4 and enPie:
             direccion = input("Elija si quiere ir por la izquierda, derecha, o por el medio (I / D / M): ").upper()
             enPie = gambeta(direccion, cancha, index, enPie)
+            if enPie:
+                pass #relato piola de algo que hizo un jugador de ataque
+            else:
+                pass #relato de que lo cortaron (un defensor)
             index += 1
             for fila in cancha:
                 print(fila)

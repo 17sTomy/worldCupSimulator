@@ -17,28 +17,85 @@ def ejectProgressBar():
             print(barraProgreso)
 
 
-def crearGrupo(diccionario, grupo):
-    matriz = [[],[],[],[],[]]
-    elegidos = []
-    for f in range(5):
-        if f == 0:
-            matriz[f].append(f"Grupo {grupo}")
-            matriz[f].append("Puntos")
-            matriz[f].append("Goles")
-        else:
-            for i in range(len(diccionario)):
-                if diccionario[i]["datos"][0] == grupo and diccionario[i] not in elegidos:
-                    elegidos.append(diccionario[i])
-                    matriz[f].append(diccionario[i]["nombre"])
-                    matriz[f].append(f'   {diccionario[i]["datos"][1]}')
-                    matriz[f].append(f'          {diccionario[i]["datos"][2]}')
-                    break  
-    return matriz
+# def crearGrupo(diccionario, grupo):
+#     matriz = [[],[],[],[],[]]
+#     elegidos = []
+#     for f in range(5):
+#         if f == 0:
+#             matriz[f].append(f"Grupo {grupo}")
+#             matriz[f].append("Puntos")
+#             matriz[f].append("Goles")
+#         else:
+#             for i in range(len(diccionario)):
+#                 if diccionario[i]["datos"][0] == grupo and diccionario[i] not in elegidos:
+#                     elegidos.append(diccionario[i])
+#                     matriz[f].append(diccionario[i]["nombre"])
+#                     matriz[f].append(f'   {diccionario[i]["datos"][1]}')
+#                     matriz[f].append(f'          {diccionario[i]["datos"][2]}')
+#                     break  
+#     return matriz
 
-def imprimirGrupo(matriz):
-    for fila in matriz:
-        for valor in fila:
-            print("\t", valor, end=" ")
+def crearGrupos(diccionario):
+    grupos = ["A","B","C","D","E","F","G","H"]
+    ALL_GROUPS = []
+    for grupo in grupos:
+        matriz = [[],[],[],[],[]]
+        elegidos = []
+        for f in range(5):
+            if f == 0:
+                matriz[f].append(f"Grupo {grupo}")
+                matriz[f].append("Puntos")
+                matriz[f].append("Goles")
+            else:
+                for i in range(len(diccionario)):
+                    if diccionario[i]["datos"][0] == grupo and diccionario[i] not in elegidos:
+                        elegidos.append(diccionario[i])
+                        matriz[f].append(diccionario[i]["nombre"])
+                        matriz[f].append(f'   {diccionario[i]["datos"][1]}')
+                        matriz[f].append(f'          {diccionario[i]["datos"][2]}')
+                        break  
+        ALL_GROUPS.append(matriz)
+    # for group in ALL_GROUPS:
+    #     imprimirGrupo(group)
+    #     print()
+    return ALL_GROUPS
+
+#para que funcione, los puntos los multiplica por 3
+def updateTablas(diccionario, tablas):
+    puntero = 0
+    for grupo in tablas:
+        tabla = []
+        for i in range(puntero, puntero+4):
+            total = (diccionario[i]["datos"][1] * 3) + diccionario[i]["datos"][2]
+            tabla.append(total)
+        tabla.sort(reverse=True)
+        f = 1
+        seleccionados = []
+        for j in range(0, 4):
+            for i in range(puntero, puntero+4):
+                if tabla[j] == (diccionario[i]["datos"][1] * 3) + diccionario[i]["datos"][2] and diccionario[i]["nombre"] not in seleccionados:
+                    seleccionados.append(diccionario[i]["nombre"])
+                    c = 0
+                    grupo[f][c] = diccionario[i]["nombre"]
+                    c += 1
+                    grupo[f][c] = '   ' + str(diccionario[i]["datos"][1])
+                    c += 1
+                    grupo[f][c] = '          ' + str(diccionario[i]["datos"][2])
+                    f += 1
+                    break
+        puntero += 4
+
+    # for group in tablas:
+    #     imprimirGrupo(group)
+    #     print()
+
+
+def imprimirGrupo(grupos):
+    for grupo in grupos:
+        for fila in grupo:
+            for valor in fila:
+                print("\t", valor, end=" ")
+            print()
         print()
 
 
