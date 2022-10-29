@@ -17,24 +17,6 @@ def ejectProgressBar():
             print(barraProgreso)
 
 
-# def crearGrupo(diccionario, grupo):
-#     matriz = [[],[],[],[],[]]
-#     elegidos = []
-#     for f in range(5):
-#         if f == 0:
-#             matriz[f].append(f"Grupo {grupo}")
-#             matriz[f].append("Puntos")
-#             matriz[f].append("Goles")
-#         else:
-#             for i in range(len(diccionario)):
-#                 if diccionario[i]["datos"][0] == grupo and diccionario[i] not in elegidos:
-#                     elegidos.append(diccionario[i])
-#                     matriz[f].append(diccionario[i]["nombre"])
-#                     matriz[f].append(f'   {diccionario[i]["datos"][1]}')
-#                     matriz[f].append(f'          {diccionario[i]["datos"][2]}')
-#                     break  
-#     return matriz
-
 def crearGrupos(diccionario):
     grupos = ["A","B","C","D","E","F","G","H"]
     ALL_GROUPS = []
@@ -55,9 +37,6 @@ def crearGrupos(diccionario):
                         matriz[f].append(f'          {diccionario[i]["datos"][2]}')
                         break  
         ALL_GROUPS.append(matriz)
-    # for group in ALL_GROUPS:
-    #     imprimirGrupo(group)
-    #     print()
     return ALL_GROUPS
 
 #para que funcione, los puntos los multiplica por 3
@@ -84,10 +63,6 @@ def updateTablas(diccionario, tablas):
                     f += 1
                     break
         puntero += 4
-
-    # for group in tablas:
-    #     imprimirGrupo(group)
-    #     print()
 
 
 def imprimirGrupo(grupos):
