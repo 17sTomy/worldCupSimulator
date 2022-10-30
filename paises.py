@@ -4,28 +4,36 @@ paises = {
         "atq": ["Danjuma", "Depay", "De jong"],
         "dfc": ["Van Dijk", "Dunmfries", "De Vrij"],
         "arquero": "Biljow",
-        "datos": ["A", 0, 0],
+        "datos": ["A", 9, 3],
+        "ranking": 2,
+        "mayorPosicion": "",
     },
     1: {
         "nombre": "Qatar ",
         "atq": ["Afif","Almoez Ali", "Hassan Al-Haidos"],
         "dfc": ["Hassan", "Koukhi", "Hisham"],
         "arquero": "Barshan",
-        "datos": ["A", 7, 1],
+        "datos": ["A", 6, 4],
+        "ranking": 3,
+        "mayorPosicion": "",
     },
     2: {
         "nombre": "Ecuador",
         "atq": ["Valencia", "Mena", "Plata"],
         "dfc": ["Preciado", "Estrada", "Torres"],
         "arquero": "Alexander Dominguez",
-        "datos": ["A", 7, 2],
+        "datos": ["A", 0, 2],
+        "ranking": 2,
+        "mayorPosicion": "",
     },
     3: {
         "nombre": "Senegal",
         "atq": ["Mane", "Sarr", "Mendy"],
         "dfc": ["Diallo", "Ciss", "Sarr"],
         "arquero": "Mendy",
-        "datos": ["A", 0, 0],
+        "datos": ["A", 1, 0],
+        "ranking": 2,
+        "mayorPosicion": "",
     },
     4: {
         "nombre": "Iran  ",
@@ -33,6 +41,8 @@ paises = {
         "dfc": ["Gholizadeh", "Mohammadi", "Kanani"],
         "arquero": "Beiranvand",
         "datos": ["B", 0, 0],
+        "ranking": 3,
+        "mayorPosicion": "",
     },
     5: {
         "nombre": "Inglaterra",
@@ -40,6 +50,8 @@ paises = {
         "dfc": ["Maguire", "Kane", "Sterling"],
         "arquero": "Pickford",
         "datos": ["B", 0, 0],
+        "ranking": 1,
+        "mayorPosicion": "",
     },
     6: {
         "nombre": "Gales ",
@@ -47,6 +59,8 @@ paises = {
         "dfc": ["Bale", "Moore", "James"],
         "arquero": "Hennessey",
         "datos": ["B", 0, 0],
+        "ranking": 3,
+        "mayorPosicion": "",
     },
     7: {
         "nombre": "EEUU  ",
@@ -54,6 +68,8 @@ paises = {
         "dfc": ["Dest", "T. Adams", "Musah"],
         "arquero": "Steffen",
         "datos": ["B", 0, 0],
+        "ranking": 2,
+        "mayorPosicion": "",
     },
     8: {
         "nombre": "Argentina",
@@ -61,6 +77,8 @@ paises = {
         "dfc": ["Paredes", "Romero", "Otamendi"],
         "arquero": "Dibu Martinez",
         "datos": ["C", 0, 0],
+        "ranking": 1,
+        "mayorPosicion": "",
     },
     9: {
         "nombre": "Mexico",
@@ -68,6 +86,8 @@ paises = {
         "dfc": ["Sanchez", "Montes", "Vasquez"],
         "arquero": "Ochoa",
         "datos": ["C", 1, 0],
+        "ranking": 2,
+        "mayorPosicion": "",
     },
     10: {
         "nombre": "Polonia",
@@ -75,6 +95,8 @@ paises = {
         "dfc": ["Glik", "Cash", "Bednarek"],
         "arquero": "Szczesny",
         "datos": ["C", 0, 0],
+        "ranking": 2,
+        "mayorPosicion": "",
     },
     11: {
        "nombre": "Arabia S.",
@@ -82,6 +104,8 @@ paises = {
        "dfc": ["Al-Ghannam", "Al Amri", "Al Bulaihi"],
        "arquero": "Al Owais",
        "datos": ["C", 0, 0],
+       "ranking": 3,
+       "mayorPosicion": "",
     },
     12: {
         "nombre": "Dinamarca",
@@ -89,6 +113,8 @@ paises = {
         "dfc": ["Christensen", "Wass", "Skov Olsen"],
         "arquero": "Schmeichel",
         "datos": ["D", 0, 0],
+        "ranking": 2,
+        "mayorPosicion": "",
     },
     13: {
         "nombre": "Australia",
@@ -96,6 +122,8 @@ paises = {
         "dfc": ["Mabil","Hrustic", "Wright"],
         "arquero": "Ryan",
         "datos": ["D", 0, 0],
+        "ranking": 3,
+        "mayorPosicion": "",
     },
     14: {
         "nombre": "Francia",
@@ -103,6 +131,8 @@ paises = {
         "dfc": ["Varane", "Benzema", "Kounde"],
         "arquero": "Lloris",
         "datos": ["D", 0, 0],
+        "ranking": 1,
+        "mayorPosicion": "",
     },
     15: {
         "nombre": "Tunez ",
@@ -110,6 +140,8 @@ paises = {
         "dfc": ["Talbi", "Maaloul", "Ghandri"],
         "arquero": "Ben Said",
         "datos": ["D", 0, 0],
+        "ranking": 3,
+        "mayorPosicion": "",
     },
     16: {
         "nombre": "Alemania",
@@ -117,6 +149,8 @@ paises = {
         "dfc": ["Sule", "Tisch", "Raum"],
         "arquero": "Neuer",
         "datos": ["E", 0, 0],
+        "ranking": 1,
+        "mayorPosicion": "",
     },
     17: {
         "nombre": "Costa Rica",
@@ -124,6 +158,8 @@ paises = {
         "dfc": ["Torres" , "Campbell", "Fuller"],
         "arquero": "Keylor Navas",
         "datos": ["E", 0, 0],
+        "ranking": 3,
+        "mayorPosicion": "",
     },
     18: {
         "nombre": "España",
@@ -131,6 +167,8 @@ paises = {
         "dfc": ["Jordi Alba", "Laporte", "Eric Garcia"],
         "arquero": "Unai Simon",
         "datos": ["E", 0, 0],
+        "ranking": 1,
+        "mayorPosicion": "",
     },
     19: {
         "nombre": "Japon ",
@@ -138,6 +176,8 @@ paises = {
         "dfc": ["Tomiyasu", "Nagatomo", "Sakai"],
         "arquero": "Gonda",
         "datos": ["E", 0, 0],
+        "ranking": 2,
+        "mayorPosicion": "",
     },
     20: {
         "nombre": "Belgica",
@@ -145,6 +185,8 @@ paises = {
         "dfc": ["Denayer", "Vertoghen", "Witsel"],
         "arquero": "Courtois",
         "datos": ["F", 0, 0],
+        "ranking": 1,
+        "mayorPosicion": "",
     },
     21: {
         "nombre": "Canada",
@@ -152,6 +194,8 @@ paises = {
         "dfc": ["Miller", "S. Vitoria", "Johnston"],
         "arquero": "Borjan",
         "datos": ["F", 0, 0],
+        "ranking": 2,
+        "mayorPosicion": "",
     },
     22: {
         "nombre": "Marruecos",
@@ -159,6 +203,8 @@ paises = {
         "dfc": ["Aguerd", "Masina", "Saiss"],
         "arquero": "Bounou",
         "datos": ["F", 0, 0],
+        "ranking": 3,
+        "mayorPosicion": "",
     },
     23: {
         "nombre": "Croacia",
@@ -166,6 +212,8 @@ paises = {
         "dfc": ["Vlasic", "Perisic", "Sosa"],
         "arquero": "Grbic",
         "datos": ["F", 0, 0],
+        "ranking": 2,
+        "mayorPosicion": "",
     },
     24: {
         "nombre": "Brasil",
@@ -173,6 +221,8 @@ paises = {
         "dfc": ["Casemiro", "Danilo", "Thiago Silva"],
         "arquero": "Alisson",   
         "datos": ["G", 0, 0],
+        "ranking": 1,
+        "mayorPosicion": "",
     },
     25: {
         "nombre": "Camerun",
@@ -180,6 +230,8 @@ paises = {
         "dfc": ["Aboubakar", "Choupo-Moting", "Castelleto"],
         "arquero": "Onana",
         "datos": ["G", 0, 0],
+        "ranking": 3,
+        "mayorPosicion": "",
     },
     26: {
         "nombre": "Serbia",
@@ -187,6 +239,8 @@ paises = {
         "dfc": ["Pavlovic", "Veljkovic", "Milenkovic"],
         "arquero": "Rajkovic",
         "datos": ["G", 0, 0],
+        "ranking": 3,
+        "mayorPosicion": "",
     },
     27: {
         "nombre": "Suiza ",
@@ -194,6 +248,8 @@ paises = {
         "dfc": ["Mbabu", "Akanji", "Rodriguez"],
         "arquero": "Sommer",
         "datos": ["G", 0, 0],
+        "ranking": 3,
+        "mayorPosicion": "",
     },
     28: {
         "nombre": "Corea del Sur",
@@ -201,20 +257,26 @@ paises = {
         "dfc": ["Jae-Sung", "Young-Gwon", "Lee young"],
         "arquero": "Seung-Gyu",
         "datos": ["H", 0, 0],
+        "ranking": 3,
+        "mayorPosicion": "",
     },
     29: {
         "nombre": "Ghana ",
         "atq": ["Kudus", "Thomas Partey", "Fatawu"],
         "dfc": ["Amartey","Baba", "Djiuku"],
         "arquero": "Wollacott",
-        "datos": ["H", 0, 0],
+        "datos": ["H", 4, 0],
+        "ranking": 3,
+        "mayorPosicion": "",
     },
     30: {
         "nombre": "Portugal",
         "atq": ["Ronaldo", "Jota", "Fernades"],
         "dfc": ["Dias", "Pepe", "Cancelo"],
         "arquero": "Costa",
-        "datos": ["H", 0, 0],
+        "datos": ["H", 1, 0],
+        "ranking": 1,
+        "mayorPosicion": "", 
     },    
     31: {
         "nombre": "Uruguay",
@@ -222,6 +284,8 @@ paises = {
         "dfc": ["Gimenez", "Godin", "Araujo"],
         "arquero": "Rochet",
         "datos": ["H", 10, 0],
+        "ranking": 1,
+        "mayorPosicion": "",
     },
 }
 

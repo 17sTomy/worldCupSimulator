@@ -10,7 +10,7 @@ frases_dfc = [
     "Lo paró con clase", 
     "Lo intercepta con justeza", 
     "Un defensa con clase", 
-    "Ganó el duelo con el atacante" 
+    "Ganó el duelo contra el atacante" 
 ]
 frases_atajas = [
     "El arquero se tiro con velocidad", 

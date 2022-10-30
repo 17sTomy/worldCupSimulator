@@ -1,3 +1,4 @@
+from lib2to3.refactor import get_all_fix_names
 import relato
 import random
 import time
@@ -37,6 +38,8 @@ paises = {
         "dfc": ["Van Dijk", "Dunmfries", "De Vrij"],
         "arquero": "Biljow",
         "datos": ["A", 0, 0],
+        "ranking": 2,
+        "mayorPosicion": "",
     },
     1: {
         "nombre": "Qatar ",
@@ -44,6 +47,8 @@ paises = {
         "dfc": ["Hassan", "Koukhi", "Hisham"],
         "arquero": "Barshan",
         "datos": ["A", 7, 1],
+        "ranking": 3,
+        "mayorPosicion": "",
     },
     2: {
         "nombre": "Ecuador",
@@ -51,6 +56,8 @@ paises = {
         "dfc": ["Preciado", "Estrada", "Torres"],
         "arquero": "Alexander Dominguez",
         "datos": ["A", 7, 2],
+        "ranking": 2,
+        "mayorPosicion": "",
     },
     3: {
         "nombre": "Senegal",
@@ -58,6 +65,8 @@ paises = {
         "dfc": ["Diallo", "Ciss", "Sarr"],
         "arquero": "Mendy",
         "datos": ["A", 0, 0],
+        "ranking": 2,
+        "mayorPosicion": "",
     },
     4: {
         "nombre": "Iran  ",
@@ -65,6 +74,8 @@ paises = {
         "dfc": ["Gholizadeh", "Mohammadi", "Kanani"],
         "arquero": "Beiranvand",
         "datos": ["B", 0, 0],
+        "ranking": 3,
+        "mayorPosicion": "",
     },
     5: {
         "nombre": "Inglaterra",
@@ -72,6 +83,8 @@ paises = {
         "dfc": ["Maguire", "Kane", "Sterling"],
         "arquero": "Pickford",
         "datos": ["B", 0, 0],
+        "ranking": 1,
+        "mayorPosicion": "",
     },
     6: {
         "nombre": "Gales ",
@@ -79,6 +92,8 @@ paises = {
         "dfc": ["Bale", "Moore", "James"],
         "arquero": "Hennessey",
         "datos": ["B", 0, 0],
+        "ranking": 3,
+        "mayorPosicion": "",
     },
     7: {
         "nombre": "EEUU  ",
@@ -86,6 +101,8 @@ paises = {
         "dfc": ["Dest", "T. Adams", "Musah"],
         "arquero": "Steffen",
         "datos": ["B", 0, 0],
+        "ranking": 2,
+        "mayorPosicion": "",
     },
     8: {
         "nombre": "Argentina",
@@ -93,6 +110,8 @@ paises = {
         "dfc": ["Paredes", "Romero", "Otamendi"],
         "arquero": "Dibu Martinez",
         "datos": ["C", 0, 0],
+        "ranking": 1,
+        "mayorPosicion": "",
     },
     9: {
         "nombre": "Mexico",
@@ -100,6 +119,8 @@ paises = {
         "dfc": ["Sanchez", "Montes", "Vasquez"],
         "arquero": "Ochoa",
         "datos": ["C", 1, 0],
+        "ranking": 2,
+        "mayorPosicion": "",
     },
     10: {
         "nombre": "Polonia",
@@ -107,6 +128,8 @@ paises = {
         "dfc": ["Glik", "Cash", "Bednarek"],
         "arquero": "Szczesny",
         "datos": ["C", 0, 0],
+        "ranking": 2,
+        "mayorPosicion": "",
     },
     11: {
        "nombre": "Arabia S.",
@@ -114,6 +137,8 @@ paises = {
        "dfc": ["Al-Ghannam", "Al Amri", "Al Bulaihi"],
        "arquero": "Al Owais",
        "datos": ["C", 0, 0],
+       "ranking": 3,
+       "mayorPosicion": "",
     },
     12: {
         "nombre": "Dinamarca",
@@ -121,6 +146,8 @@ paises = {
         "dfc": ["Christensen", "Wass", "Skov Olsen"],
         "arquero": "Schmeichel",
         "datos": ["D", 0, 0],
+        "ranking": 2,
+        "mayorPosicion": "",
     },
     13: {
         "nombre": "Australia",
@@ -128,6 +155,8 @@ paises = {
         "dfc": ["Mabil","Hrustic", "Wright"],
         "arquero": "Ryan",
         "datos": ["D", 0, 0],
+        "ranking": 3,
+        "mayorPosicion": "",
     },
     14: {
         "nombre": "Francia",
@@ -135,6 +164,8 @@ paises = {
         "dfc": ["Varane", "Benzema", "Kounde"],
         "arquero": "Lloris",
         "datos": ["D", 0, 0],
+        "ranking": 1,
+        "mayorPosicion": "",
     },
     15: {
         "nombre": "Tunez ",
@@ -142,6 +173,8 @@ paises = {
         "dfc": ["Talbi", "Maaloul", "Ghandri"],
         "arquero": "Ben Said",
         "datos": ["D", 0, 0],
+        "ranking": 3,
+        "mayorPosicion": "",
     },
     16: {
         "nombre": "Alemania",
@@ -149,6 +182,8 @@ paises = {
         "dfc": ["Sule", "Tisch", "Raum"],
         "arquero": "Neuer",
         "datos": ["E", 0, 0],
+        "ranking": 1,
+        "mayorPosicion": "",
     },
     17: {
         "nombre": "Costa Rica",
@@ -156,6 +191,8 @@ paises = {
         "dfc": ["Torres" , "Campbell", "Fuller"],
         "arquero": "Keylor Navas",
         "datos": ["E", 0, 0],
+        "ranking": 3,
+        "mayorPosicion": "",
     },
     18: {
         "nombre": "España",
@@ -163,6 +200,8 @@ paises = {
         "dfc": ["Jordi Alba", "Laporte", "Eric Garcia"],
         "arquero": "Unai Simon",
         "datos": ["E", 0, 0],
+        "ranking": 1,
+        "mayorPosicion": "",
     },
     19: {
         "nombre": "Japon ",
@@ -170,6 +209,8 @@ paises = {
         "dfc": ["Tomiyasu", "Nagatomo", "Sakai"],
         "arquero": "Gonda",
         "datos": ["E", 0, 0],
+        "ranking": 2,
+        "mayorPosicion": "",
     },
     20: {
         "nombre": "Belgica",
@@ -177,6 +218,8 @@ paises = {
         "dfc": ["Denayer", "Vertoghen", "Witsel"],
         "arquero": "Courtois",
         "datos": ["F", 0, 0],
+        "ranking": 1,
+        "mayorPosicion": "",
     },
     21: {
         "nombre": "Canada",
@@ -184,6 +227,8 @@ paises = {
         "dfc": ["Miller", "S. Vitoria", "Johnston"],
         "arquero": "Borjan",
         "datos": ["F", 0, 0],
+        "ranking": 2,
+        "mayorPosicion": "",
     },
     22: {
         "nombre": "Marruecos",
@@ -191,6 +236,8 @@ paises = {
         "dfc": ["Aguerd", "Masina", "Saiss"],
         "arquero": "Bounou",
         "datos": ["F", 0, 0],
+        "ranking": 3,
+        "mayorPosicion": "",
     },
     23: {
         "nombre": "Croacia",
@@ -198,6 +245,8 @@ paises = {
         "dfc": ["Vlasic", "Perisic", "Sosa"],
         "arquero": "Grbic",
         "datos": ["F", 0, 0],
+        "ranking": 2,
+        "mayorPosicion": "",
     },
     24: {
         "nombre": "Brasil",
@@ -205,6 +254,8 @@ paises = {
         "dfc": ["Casemiro", "Danilo", "Thiago Silva"],
         "arquero": "Alisson",   
         "datos": ["G", 0, 0],
+        "ranking": 1,
+        "mayorPosicion": "",
     },
     25: {
         "nombre": "Camerun",
@@ -212,6 +263,8 @@ paises = {
         "dfc": ["Aboubakar", "Choupo-Moting", "Castelleto"],
         "arquero": "Onana",
         "datos": ["G", 0, 0],
+        "ranking": 3,
+        "mayorPosicion": "",
     },
     26: {
         "nombre": "Serbia",
@@ -219,6 +272,8 @@ paises = {
         "dfc": ["Pavlovic", "Veljkovic", "Milenkovic"],
         "arquero": "Rajkovic",
         "datos": ["G", 0, 0],
+        "ranking": 3,
+        "mayorPosicion": "",
     },
     27: {
         "nombre": "Suiza ",
@@ -226,6 +281,8 @@ paises = {
         "dfc": ["Mbabu", "Akanji", "Rodriguez"],
         "arquero": "Sommer",
         "datos": ["G", 0, 0],
+        "ranking": 3,
+        "mayorPosicion": "",
     },
     28: {
         "nombre": "Corea del Sur",
@@ -233,6 +290,8 @@ paises = {
         "dfc": ["Jae-Sung", "Young-Gwon", "Lee young"],
         "arquero": "Seung-Gyu",
         "datos": ["H", 0, 0],
+        "ranking": 3,
+        "mayorPosicion": "",
     },
     29: {
         "nombre": "Ghana ",
@@ -240,6 +299,8 @@ paises = {
         "dfc": ["Amartey","Baba", "Djiuku"],
         "arquero": "Wollacott",
         "datos": ["H", 0, 0],
+        "ranking": 3,
+        "mayorPosicion": "",
     },
     30: {
         "nombre": "Portugal",
@@ -247,6 +308,8 @@ paises = {
         "dfc": ["Dias", "Pepe", "Cancelo"],
         "arquero": "Costa",
         "datos": ["H", 0, 0],
+        "ranking": 1,
+        "mayorPosicion": "", 
     },    
     31: {
         "nombre": "Uruguay",
@@ -254,6 +317,8 @@ paises = {
         "dfc": ["Gimenez", "Godin", "Araujo"],
         "arquero": "Rochet",
         "datos": ["H", 10, 0],
+        "ranking": 1,
+        "mayorPosicion": "",
     },
 }
 
@@ -278,6 +343,8 @@ def jugadaAtqDfc(golesAFavor, golesEnContra, diccionario, miEquipo, rival):
     index = 0
     while index < 4 and enPie:
         direccion = input("Elija si quiere ir por la izquierda, derecha, o por el medio (I / D / M): ").upper()
+        while direccion != "I" and direccion != "D" and direccion != "M":
+            direccion = input("Dirección incorrecta (I / D / M): ").upper()
         enPie = gambeta(direccion, cancha, index, enPie)
         if enPie:
             imprimirComentario(miEquipo, "atq", relato.frases_atq, diccionario)
@@ -299,6 +366,8 @@ def jugadaAtqDfc(golesAFavor, golesEnContra, diccionario, miEquipo, rival):
         atacanteRandom = POSICIONES[random.randint(0, 2)]
         print(atacanteRandom)
         direccion = input("Elija donde colocar al defensor (I / D / M): ").upper()
+        while direccion != "I" and direccion != "D" and direccion != "M":
+            direccion = input("Dirección incorrecta (I / D / M): ").upper()
         enPieRival = direccion != atacanteRandom
         if enPieRival:
             imprimirComentario(rival, "atq", relato.frases_atq, diccionario)
@@ -313,10 +382,20 @@ def jugadaAtqDfc(golesAFavor, golesEnContra, diccionario, miEquipo, rival):
     return golesAFavor, golesEnContra
 
 
+def actualizarDiccionario(miEquipo, rival, diccionario, golesAFavor, golesEnContra, ganador):
+    diccionario[miEquipo]["datos"][2] += golesAFavor
+    diccionario[rival]["datos"][2] += golesEnContra
+    if ganador != None:
+        diccionario[ganador]["datos"][1] += 3
+    else:
+        diccionario[miEquipo]["datos"][1] += 1
+        diccionario[rival]["datos"][1] += 1
+
 def partido(miEquipo, rival, diccionario, tipoPartido): 
     intentos = 3
     golesAFavor = 0
     golesEnContra = 0
+    ganador = None
     while intentos > 0:
         goles = jugadaAtqDfc(golesAFavor, golesEnContra, diccionario, miEquipo, rival)
         golesAFavor = 0
@@ -353,9 +432,11 @@ def partido(miEquipo, rival, diccionario, tipoPartido):
                         resultadoRandom2 = random.randint(0, 5)
                     print()
                     if resultadoRandom1 > resultadoRandom2:
+                        ganador = miEquipo
                         print(f'Señoras y señores, ha ganado {diccionario[miEquipo]["nombre"]} a {diccionario[rival]["nombre"]} por penales: {resultadoRandom1} - {resultadoRandom2}')
                         print()
                     else:
+                        ganador = rival
                         print(f'Señoras y señores, ha ganado {diccionario[rival]["nombre"]} a {diccionario[miEquipo]["nombre"]} por penales: {resultadoRandom2} - {resultadoRandom1}')
                         print()
                         print("************************************************************************")
@@ -364,10 +445,20 @@ def partido(miEquipo, rival, diccionario, tipoPartido):
                     print("Pita el arbitro, se terminó el tiempo extra...")
                     imprimirMarcador(golesAFavor, golesEnContra, diccionario, miEquipo, rival)
     else:
+        if golesAFavor > golesEnContra:
+            ganador = miEquipo
+        else:
+            ganador = rival
         print("Pita el arbitro, se terminó el partido...")
         imprimirMarcador(golesAFavor, golesEnContra, diccionario, miEquipo, rival)
 
-partido(8, 9, paises, "gru")
+    print(golesAFavor, goles)
+    print(ganador)
+
+    actualizarDiccionario(miEquipo, rival, diccionario, golesAFavor, golesEnContra, ganador)
+    print(diccionario)
+
+partido(8, 9, paises, "grupo")
 
 
 

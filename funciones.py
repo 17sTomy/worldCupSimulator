@@ -74,3 +74,29 @@ def imprimirGrupo(grupos):
         print()
 
 
+def clasificados(diccionario):
+    CLASIFICADOS = []
+    GRUPOS = ["A","B","C","D","E","F","G","H"]
+
+    for grupo in GRUPOS:
+        k = 0
+        totalPuntos = []
+        while k < len(diccionario):
+            if diccionario[k]["datos"][0] == grupo:
+                total = (diccionario[k]["datos"][1] * 3) + diccionario[k]["datos"][2]
+                totalPuntos.append(total)
+            k += 1
+        totalPuntos.sort(reverse=True)
+        print(totalPuntos)
+
+        for i in range(2):
+            dicc = 0
+            while dicc < len(diccionario):
+                total = (diccionario[dicc]["datos"][1] * 3) + diccionario[dicc]["datos"][2]
+                if total == totalPuntos[i] and dicc not in CLASIFICADOS and diccionario[dicc]["datos"][0] == grupo:
+                    print(diccionario[dicc]["nombre"])
+                    CLASIFICADOS.append(dicc)
+                    break
+                dicc += 1
+    print(CLASIFICADOS)
+    return CLASIFICADOS
