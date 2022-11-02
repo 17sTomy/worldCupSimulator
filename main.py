@@ -55,13 +55,13 @@ def eliminaciones(diccionario, seleccionesClasificadas, miEquipo, tipoPartido):
                 else:
                     rival = id_team_a
                 goals = partidoJugador.partidoPlayer(miEquipo, rival, diccionario, "eliminacion")
-                print(miEquipo, goals[0])
-                print(rival, goals[1])
                 if goals[0] > goals[1]:
                     seleccionesClasificadasAux.append(miEquipo)
-                if goals[0] < goals[1]:
+                elif goals[0] < goals[1]:
                     seleccionesClasificadasAux.append(rival)
-    
+                else:
+                    seleccionesClasificadasAux.append(goals[2])
+                
             else:
                 partido = lambda id_team_a, id_team_b: ((id_team_a, random.randint(0, 5-diccionario[id_team_a]["ranking"])), (id_team_b, random.randint(0, 5-diccionario[id_team_b]["ranking"])))
                 resultado = partido(id_team_a, id_team_b)
