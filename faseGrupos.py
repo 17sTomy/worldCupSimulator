@@ -26,7 +26,7 @@ pnt_partido = lambda dic_paises, partido : print((dic_paises[partido[0][0]]["nom
 
 def pnt_dic(dic):                   ###### ELIMINAR ###### Prueba que funcioná la actualización del diccionario 
     for i in range (32):
-        print((dic[i]["nombre"]).ljust(17) ,dic[i].get("datos"))
+        print((dic[i]["nombre"]).ljust(17), dic[i].get("datos"))
         if i%4 == 3:
             print()
 
@@ -83,7 +83,7 @@ def fecha_0(dic_paises):
     return tabla
 
 partido = lambda  diccionario_paises, id_team_a, id_team_b : ((id_team_a, random.randint(0, 5-diccionario_paises[id_team_a]["ranking"])), (id_team_b, random.randint(0, 5-diccionario_paises[id_team_b]["ranking"])))
-""" Simula el partido entre dos equipos y retorna el resultado (tuple). """
+""" Simula el partido entre dos equipos y retorna el resultado (tupla). """
 
 def estadisticas_partido(diccionario, partido, tabla_grupo): #tabla del grupo = matriz
     """ Actualiza las estaditicas del resultado del partido a la tabla del grupo. """
@@ -117,7 +117,7 @@ def fase_grupos(diccionario, tabla, seleccion): #seleccion = Argentina
     """ Simula los partidos de cada fecha. """
     
     # Instacia previa a simulación. Imprime la tabla de cada grupo
-    print((" FECHA 0 ").center(74, "|"), end='\n\n\n\n')
+    print((" WORLD CUP SIMULATOR 2022 ").center(74, "|"), end='\n\n\n\n')
     pnt_tabla(tabla)
     print('\n')
     # Comienzo de simulación
@@ -137,13 +137,11 @@ def fase_grupos(diccionario, tabla, seleccion): #seleccion = Argentina
                 for i in range(len(partido_1)):
                     if seleccion == partido_1[i][0]:
                         rival = partido_1[i-1][0]
-                        print((diccionario[seleccion]["nombre"]+" "*5+"vs").rjust(37)+" "*5+diccionario[rival]["nombre"]+"\n")
                         partido_1 = partidoJugador.partidoPlayer(seleccion, rival, diccionario, "grupo")
                         partido_1 = ((seleccion, partido_1[0]), (rival, partido_1[1]))
                         print("\n\n")
                     if seleccion == partido_2[i][0]:
                         rival = partido_2[i-1][0]
-                        print((diccionario[seleccion]["nombre"]+" "*5+"vs").rjust(37)+" "*5+diccionario[rival]["nombre"]+"\n")
                         partido_2 = partidoJugador.partidoPlayer(seleccion, rival, diccionario, "grupo")
                         partido_2 = ((seleccion, partido_2[0]), (rival, partido_2[1]))
                         print("\n\n")
@@ -162,5 +160,5 @@ def fase_grupos(diccionario, tabla, seleccion): #seleccion = Argentina
 def simuladorFaseGrupos(diccionario, miEquipo):
     tabla_general = fecha_0(diccionario)
     fase_grupos(diccionario, tabla_general, miEquipo)
-
-simuladorFaseGrupos(paises.paises, 8)
+    return tabla_general
+   

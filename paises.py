@@ -4,7 +4,7 @@ paises = {
         "atq": ["Afif","Almoez Ali", "Hassan Al-Haidos"],
         "dfc": ["Hassan", "Koukhi", "Hisham"],
         "arquero": "Barshan",
-        "datos": ["A", 6, 4],
+        "datos": ["A", 0, 0], #PUNTOS Y GOLES
         "ranking": 4,
         "mayorPosicion": "",
     },
@@ -13,7 +13,7 @@ paises = {
         "atq": ["Valencia", "Mena", "Plata"],
         "dfc": ["Preciado", "Estrada", "Torres"],
         "arquero": "Alexander Dominguez",
-        "datos": ["A", 0, 2],
+        "datos": ["A", 0, 0],
         "ranking": 3,
         "mayorPosicion": "",
     },
@@ -22,7 +22,7 @@ paises = {
         "atq": ["Mane", "Sarr", "Mendy"],
         "dfc": ["Diallo", "Ciss", "Sarr"],
         "arquero": "Mendy",
-        "datos": ["A", 1, 0],
+        "datos": ["A", 0, 0],
         "ranking": 2,
         "mayorPosicion": "",
     },
@@ -31,7 +31,7 @@ paises = {
         "atq": ["Danjuma", "Depay", "De jong"],
         "dfc": ["Van Dijk", "Dunmfries", "De Vrij"],
         "arquero": "Biljow",
-        "datos": ["A", 9, 3],
+        "datos": ["A", 0, 0],
         "ranking": 1,
         "mayorPosicion": "",
     },
@@ -94,7 +94,7 @@ paises = {
         "atq": ["Lozano", "Corona", "Herrera"],
         "dfc": ["Sanchez", "Montes", "Vasquez"],
         "arquero": "Ochoa",
-        "datos": ["C", 1, 0],
+        "datos": ["C", 0, 0],
         "ranking": 2,
         "mayorPosicion": "",
     },
@@ -256,7 +256,7 @@ paises = {
         "atq": ["Ronaldo", "Jota", "Fernades"],
         "dfc": ["Dias", "Pepe", "Cancelo"],
         "arquero": "Costa",
-        "datos": ["H", 1, 0],
+        "datos": ["H", 0, 0],
         "ranking": 1,
         "mayorPosicion": "", 
     },    
@@ -265,7 +265,7 @@ paises = {
         "atq": ["Kudus", "Thomas Partey", "Fatawu"],
         "dfc": ["Amartey","Baba", "Djiuku"],
         "arquero": "Wollacott",
-        "datos": ["H", 4, 0],
+        "datos": ["H", 0, 0],
         "ranking": 4,
         "mayorPosicion": "",
     },
@@ -274,7 +274,7 @@ paises = {
         "atq": ["Suarez", "Nuñez", "Valverde"],
         "dfc": ["Gimenez", "Godin", "Araujo"],
         "arquero": "Rochet",
-        "datos": ["H", 10, 0],
+        "datos": ["H", 0, 0],
         "ranking": 2,
         "mayorPosicion": "",
     },
@@ -288,18 +288,3 @@ paises = {
         "mayorPosicion": "",
     },
 }
-
-# for pais in paises:
-#     print(pais)
-#     print(paises[pais])
-#     print(paises[pais]["atq"])
-#     print(paises[pais]["dfc"][0])
-#     print(paises[pais]["datos"][0])
-#     print()
-
-
-# for i in range(len(paises)):
-#     print(f'{paises[i]["datos"][1]}')
-
-# for pais, datos in paises.items():
-#     print("Jugador de {}: {}".format(pais, datos["jugadores"][0]))

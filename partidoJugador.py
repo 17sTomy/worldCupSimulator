@@ -29,14 +29,13 @@ def gambeta(direccion, matriz, posicion, enPie):
         enPie = False
     return enPie
 
-
 def imprimirComentario(equipo, jugador, tipoFrase, diccionario):
     randomPlayer = diccionario[equipo][jugador][random.randint(0, 2)].upper()
     relatoRandom = random.randint(0, len(tipoFrase)-1)
     print(tipoFrase[relatoRandom] + " " + randomPlayer + "...")
 
 def imprimirMarcador(golesAFavor, golesEnContra, diccionario, miEquipo, rival):
-    print(f'{diccionario[miEquipo]["nombre"]} {golesAFavor} - {golesEnContra} {diccionario[rival]["nombre"]}')
+    print((diccionario[miEquipo]["nombre"] + " " + str(golesAFavor)).rjust(37), "-", str(golesEnContra), diccionario[rival]["nombre"])
 
 def gritarGol():
     relatoRandom = random.randint(0, len(relato.frases_gol)-1)
@@ -100,6 +99,7 @@ def actualizarDiccionario(miEquipo, rival, diccionario, golesAFavor, golesEnCont
         diccionario[rival]["datos"][1] += 1
 
 def partidoPlayer(miEquipo, rival, diccionario, tipoPartido): 
+    print((diccionario[miEquipo]["nombre"]+" "*5+"vs").rjust(37)+" "*5+diccionario[rival]["nombre"]+"\n")
     intentos = 2
     golesAFavor = 0
     golesEnContra = 0
@@ -117,7 +117,7 @@ def partidoPlayer(miEquipo, rival, diccionario, tipoPartido):
         if tipoPartido == "grupo":
             print()
             print("Pita el arbitro, se terminó el partido en EMPATE...")
-            imprimirMarcador(golesAFavor, golesEnContra, diccionario, miEquipo, rival)
+            # imprimirMarcador(golesAFavor, golesEnContra, diccionario, miEquipo, rival)
         else:
             print("Nos vamos al TIEMPO EXTRA...")
             print()  
@@ -135,7 +135,7 @@ def partidoPlayer(miEquipo, rival, diccionario, tipoPartido):
                     time.sleep(1)
                     resultadoRandom1 = random.randint(0, 5)
                     resultadoRandom2 = random.randint(0, 5)
-                    while resultadoRandom1 == resultadoRandom2:
+                    while resultadoRandom1 == resultadoRandom2 and abs(resultadoRandom1 - resultadoRandom2) > 3:
                         resultadoRandom1 = random.randint(0, 5)
                         resultadoRandom2 = random.randint(0, 5)
                     print()
@@ -151,14 +151,14 @@ def partidoPlayer(miEquipo, rival, diccionario, tipoPartido):
                 else:
                     print()
                     print("Pita el arbitro, se terminó el tiempo extra...")
-                    imprimirMarcador(golesAFavor, golesEnContra, diccionario, miEquipo, rival)
+                    # imprimirMarcador(golesAFavor, golesEnContra, diccionario, miEquipo, rival)
     else:
         if golesAFavor > golesEnContra:
             ganador = miEquipo
         else:
             ganador = rival
         print("Pita el arbitro, se terminó el partido...")
-        imprimirMarcador(golesAFavor, golesEnContra, diccionario, miEquipo, rival)
+        # imprimirMarcador(golesAFavor, golesEnContra, diccionario, miEquipo, rival)
 
     actualizarDiccionario(miEquipo, rival, diccionario, golesAFavor, golesEnContra, ganador)
     return golesAFavor, golesEnContra, ganador
