@@ -6,12 +6,12 @@ def generarCancha():
     matriz = []
     for f in range(3):
         matriz.append([])
-        for _ in range(4):
+        for _ in range(3):
             matriz[f].append(0)
     return matriz
 
 def generarDefensores(matriz):
-    for c in range(4):
+    for c in range(3):
         posicionJugador = random.randint(0,2)
         matriz[posicionJugador][c] = 1
 
@@ -41,14 +41,13 @@ def gritarGol():
     relatoRandom = random.randint(0, len(relato.frases_gol)-1)
     print(relato.frases_gol[relatoRandom])
 
-
 def jugadaAtqDfc(golesAFavor, golesEnContra, diccionario, miEquipo, rival):
     cancha = generarCancha()
     generarDefensores(cancha)
     enPie = True
     enPieRival = True
     index = 0
-    while index < 4 and enPie:
+    while index < 3 and enPie:
         direccion = input("Elija si quiere ir por la izquierda, derecha, o por el medio (I / D / M): ").upper()
         while direccion != "I" and direccion != "D" and direccion != "M":
             direccion = input("Dirección incorrecta (I / D / M): ").upper()
@@ -68,7 +67,7 @@ def jugadaAtqDfc(golesAFavor, golesEnContra, diccionario, miEquipo, rival):
     print("************************************************************************")
 
     index = 0
-    while index < 4 and enPieRival:
+    while index < 3 and enPieRival:
         POSICIONES = ["I", "D", "M"]
         atacanteRandom = POSICIONES[random.randint(0, 2)]
         print(atacanteRandom)
@@ -112,12 +111,12 @@ def partidoPlayer(miEquipo, rival, diccionario, tipoPartido):
         golesEnContra += goles[1]
         intentos -= 1
         print("************************************************************************")
+        print()
 
     if golesAFavor == golesEnContra:
         if tipoPartido == "grupo":
             print()
             print("Pita el arbitro, se terminó el partido en EMPATE...")
-            # imprimirMarcador(golesAFavor, golesEnContra, diccionario, miEquipo, rival)
         else:
             print("Nos vamos al TIEMPO EXTRA...")
             print()  
@@ -129,7 +128,9 @@ def partidoPlayer(miEquipo, rival, diccionario, tipoPartido):
                 golesEnContra = 0
                 golesEnContra += goles[1]
                 intentos -= 1
+                print()
                 print("************************************************************************")
+                print()
                 if golesAFavor == golesEnContra:
                     print("NOS VAMOS A LOS PENALES...")
                     time.sleep(1)
@@ -148,17 +149,18 @@ def partidoPlayer(miEquipo, rival, diccionario, tipoPartido):
                         print(f'Señoras y señores, ha ganado {diccionario[rival]["nombre"]} a {diccionario[miEquipo]["nombre"]} por penales: {resultadoRandom2} - {resultadoRandom1}')
                         print()
                         print("************************************************************************")
+                        print()
                 else:
                     print()
                     print("Pita el arbitro, se terminó el tiempo extra...")
-                    # imprimirMarcador(golesAFavor, golesEnContra, diccionario, miEquipo, rival)
+                    print()
     else:
         if golesAFavor > golesEnContra:
             ganador = miEquipo
         else:
             ganador = rival
         print("Pita el arbitro, se terminó el partido...")
-        # imprimirMarcador(golesAFavor, golesEnContra, diccionario, miEquipo, rival)
+        print()
 
     actualizarDiccionario(miEquipo, rival, diccionario, golesAFavor, golesEnContra, ganador)
     return golesAFavor, golesEnContra, ganador

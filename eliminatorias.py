@@ -38,10 +38,10 @@ def eliminaciones(diccionario, seleccionesClasificadas, miEquipo, tipoPartido):
                 goals = partidoJugador.partidoPlayer(miEquipo, rival, diccionario, "eliminacion")
                 if goals[0] > goals[1]:
                     seleccionesClasificadasAux.append(miEquipo)
-                    print(("Campeón del Mundo: " + diccionario[miEquipo]["nombre"]).center(74))
+                    print(("Campeón del Mundo 🏆: " + diccionario[miEquipo]["nombre"].upper()).center(74))
                 elif goals[0] < goals[1]:
                     seleccionesClasificadasAux.append(rival)
-                    print(("Campeón del Mundo: " + diccionario[rival]["nombre"]).center(74))
+                    print(("Campeón del Mundo 🏆: " + diccionario[rival]["nombre"].upper()).center(74))
                 else:
                     seleccionesClasificadasAux.append(goals[2])
                 
@@ -55,10 +55,9 @@ def eliminaciones(diccionario, seleccionesClasificadas, miEquipo, tipoPartido):
 
             print((diccionario[id_team_a]["nombre"]+" "+str(resultado[0][1])).rjust(37),"-",str(resultado[1][1]),diccionario[id_team_b] ["nombre"])
             if resultado[0][1] > resultado[1][1]:
-                print(("Campeón del Mundo: " + diccionario[id_team_a]["nombre"]).center(74))
-
+                print(("Campeón del Mundo 🏆: " + diccionario[id_team_a]["nombre"].upper()).center(74))
             elif resultado[0][1] < resultado[1][1]:
-                print(("Campeón del Mundo: " + diccionario[id_team_b]["nombre"]).center(74))
+                print(("Campeón del Mundo 🏆: " + diccionario[id_team_b]["nombre"].upper()).center(74))
 
     else:
         'Se juegan desde octavos hasta semis'
