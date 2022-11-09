@@ -81,7 +81,6 @@ def eliminaciones(diccionario, seleccionesClasificadas, miEquipo, tipoPartido):
                 RESULTADOS.append(goals[0])
                 RESULTADOS.append(goals[1])
                 RESULTADOS.append(resultado[1][1])
-
                 EQUIPOS.append(miEquipo)
                 EQUIPOS.append(rival)
                 
@@ -92,7 +91,6 @@ def eliminaciones(diccionario, seleccionesClasificadas, miEquipo, tipoPartido):
 
                 RESULTADOS.append(resultado[0][1])
                 RESULTADOS.append(resultado[1][1])
-
                 EQUIPOS.append(id_team_a)
                 EQUIPOS.append(id_team_b)
                 
@@ -121,8 +119,6 @@ def eliminaciones(diccionario, seleccionesClasificadas, miEquipo, tipoPartido):
             print((equipo1+" "+str(RESULTADOS[i])).rjust(37),"-",str(RESULTADOS[i+1]),equipo2)
         
         seleccionesClasificadas = seleccionesClasificadasAux
-
-
 
     time.sleep(2)
 
