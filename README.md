@@ -12,6 +12,6 @@ Al jugar los partidos, vas a tener que atacar y defender. Para atacar, vas a ir 
 ### Franco Cabanillas
 ### Joaquín Ares García
 ### José García Jiménez
-### Tomás Ignacio Álvarez
+### Tomás Ignacio Álvarez (https://www.linkedin.com/in/tom%C3%A1s-alvarez-40b045217/)
 
 
