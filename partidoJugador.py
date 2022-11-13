@@ -1,8 +1,12 @@
 import relato
 import random
 import time
+import funciones
 
 def generarCancha():
+    """
+    Crea la cancha que es una matriz de 3x3
+    """
     matriz = []
     for f in range(3):
         matriz.append([])
@@ -11,6 +15,9 @@ def generarCancha():
     return matriz
 
 def generarDefensores(matriz):
+    """
+    Coloca un defensor en cada columna de manera aleatoria
+    """
     for c in range(3):
         posicionJugador = random.randint(0,2)
         matriz[posicionJugador][c] = 1
@@ -19,6 +26,9 @@ def generarDefensores(matriz):
         print(fila)
 
 def gambeta(direccion, matriz, posicion, enPie):
+    """
+    Va posicionando al jugador y chequea si sigue con la pelota
+    """
     if direccion == "I" and matriz[0][posicion] != 1:
         matriz[0][posicion] = "P"
     elif direccion == "M" and matriz[1][posicion] != 1:
@@ -30,11 +40,17 @@ def gambeta(direccion, matriz, posicion, enPie):
     return enPie
 
 def imprimirComentario(equipo, jugador, tipoFrase, diccionario):
+    """
+    Imprime un comentario aleatorio cuando hay una gambeta
+    """
     randomPlayer = diccionario[equipo][jugador][random.randint(0, 2)].upper()
     relatoRandom = random.randint(0, len(tipoFrase)-1)
     print(tipoFrase[relatoRandom] + " " + randomPlayer + "...")
 
 def imprimirMarcador(golesAFavor, golesEnContra, diccionario, miEquipo, rival):
+    """
+    Imprime los goles de cada equipo y sus respectivos nombres
+    """
     print((diccionario[miEquipo]["nombre"] + " " + str(golesAFavor)).rjust(37), "-", str(golesEnContra), diccionario[rival]["nombre"])
 
 def gritarGol():
@@ -42,6 +58,9 @@ def gritarGol():
     print(relato.frases_gol[relatoRandom])
 
 def jugadaAtqDfc(golesAFavor, golesEnContra, diccionario, miEquipo, rival):
+    """
+    Arma el turno de ataque y luego el de defensa
+    """
     cancha = generarCancha()
     generarDefensores(cancha)
     enPie = True
@@ -87,8 +106,10 @@ def jugadaAtqDfc(golesAFavor, golesEnContra, diccionario, miEquipo, rival):
 
     return golesAFavor, golesEnContra
 
-
 def actualizarDiccionario(miEquipo, rival, diccionario, golesAFavor, golesEnContra, ganador):
+    """
+    Actualiza el diccionario
+    """
     diccionario[miEquipo]["datos"][2] += golesAFavor
     diccionario[rival]["datos"][2] += golesEnContra
     if ganador != None:
@@ -98,7 +119,11 @@ def actualizarDiccionario(miEquipo, rival, diccionario, golesAFavor, golesEnCont
         diccionario[rival]["datos"][1] += 1
 
 def partidoPlayer(miEquipo, rival, diccionario, tipoPartido): 
+    """
+    Simula todo el partido del usuario de inicio a fin
+    """
     print((diccionario[miEquipo]["nombre"]+" "*5+"vs").rjust(37)+" "*5+diccionario[rival]["nombre"]+"\n")
+    funciones.ejectProgressBar()
     intentos = 2
     golesAFavor = 0
     golesEnContra = 0
@@ -113,7 +138,7 @@ def partidoPlayer(miEquipo, rival, diccionario, tipoPartido):
         print("************************************************************************")
         print()
 
-    if golesAFavor == golesEnContra:
+    if golesAFavor == golesEnContra: #si hay empate y el partido es de tipo eliminatorias, se simulan penales
         if tipoPartido == "grupo":
             print()
             print("Pita el arbitro, se terminó el partido en EMPATE...")
@@ -124,7 +149,7 @@ def partidoPlayer(miEquipo, rival, diccionario, tipoPartido):
             while intentos > 0:
                 goles = jugadaAtqDfc(golesAFavor, golesEnContra, diccionario, miEquipo, rival)
                 golesAFavor = 0
-                golesAFavor += goles[0]
+                golesAFavor += goles[0] 
                 golesEnContra = 0
                 golesEnContra += goles[1]
                 intentos -= 1

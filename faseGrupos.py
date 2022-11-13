@@ -24,12 +24,6 @@ def pnt_tabla(tabla):
 pnt_partido = lambda dic_paises, partido : print((dic_paises[partido[0][0]]["nombre"]).rjust(32)+"  "+str(partido[0][1])+" - "+str(partido[1][1])+"  "+dic_paises[partido[1][0]]["nombre"])
 """ Imprime los resultados del partido de forma más legible """       
 
-def pnt_dic(dic):                   ###### ELIMINAR ###### Prueba que funcioná la actualización del diccionario 
-    for i in range (32):
-        print((dic[i]["nombre"]).ljust(17), dic[i].get("datos"))
-        if i%4 == 3:
-            print()
-
 def pnt_fixture(diccionario, lista_resultados):
     """ Imprime de forma legible los resultados de los partidos de la fecha """
     
@@ -66,7 +60,6 @@ def lista_menor_mayor(lista):
                 lista[i] = auxiliar
 
 #Simulacion
-
 def fecha_0(dic_paises):
     """ Crea una tabla con los grupos y datos del mundial.  """
     
@@ -88,7 +81,6 @@ partido = lambda  diccionario_paises, id_team_a, id_team_b : ((id_team_a, random
 def estadisticas_partido(diccionario, partido, tabla_grupo): #tabla del grupo = matriz
     """ Actualiza las estaditicas del resultado del partido a la tabla del grupo. """
     
-    # partido = ((id_pais_a, goles_a), (id_pais_b, goles_b))
     for i in range (len(partido)): #cantidad de equipos
         for j in range (1, len(tabla_grupo)): #repaso por cada fila del grupo
             if tabla_grupo[j][0] == partido[i][0]: #si conincide con el id del pais

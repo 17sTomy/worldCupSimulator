@@ -1,6 +1,9 @@
 import time
 
 def progressBar(part, total, length=30):
+    """
+    Crea la barra de progreso
+    """
     frac = part/total
     completed = int(frac * length)
     missing = length - completed
@@ -8,6 +11,9 @@ def progressBar(part, total, length=30):
     return bar
 
 def ejectProgressBar(): 
+    """
+    Imprime la barra de progreso
+    """
     """ Ejecuta la barra de progreso """
     for i in range(31):
         time.sleep(0.1)
@@ -18,7 +24,9 @@ def ejectProgressBar():
 
 
 def clasificados(tabla_general):
-    """ Devuelve un array con todos los equipos que pasan a la siguiente ronda """
+    """ 
+    Devuelve un array con todos los equipos que pasan a la siguiente ronda
+    """
     
     CLASIFICADOS = []
     for grupo in range(len(tabla_general)):

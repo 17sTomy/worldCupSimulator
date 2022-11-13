@@ -5,9 +5,19 @@ import funciones
 import paises
 import faseGrupos
 
-SELECCIONES = paises.paises
-
 def eliminaciones(diccionario, seleccionesClasificadas, miEquipo, tipoPartido):
+    partidoClasi = {
+        8:"Octavos de Final", 
+        4:"Cuartos de Final",
+        2:"Semifinal",
+        1:"Final"
+    }
+    if miEquipo not in seleccionesClasificadas and tipoPartido == 8:
+        print(miEquipo, seleccionesClasificadas)
+        diccionario[miEquipo]["mayorPosicion"] = "FASE DE GRUPOS"
+    elif miEquipo not in seleccionesClasificadas and diccionario[miEquipo]["mayorPosicion"] == "":
+        diccionario[miEquipo]["mayorPosicion"] = partidoClasi[tipoPartido*2].upper()
+
     RESULTADOS = []
     EQUIPOS = []
     equipo1 = 0
@@ -15,13 +25,6 @@ def eliminaciones(diccionario, seleccionesClasificadas, miEquipo, tipoPartido):
     resultado = ((0,0),(0,0))
     i = 0
     seleccionesClasificadasAux = []
-
-    partidoClasi = {
-        8:"Octavos de Final", 
-        4:"Cuartos de Final",
-        2:"Semifinal",
-        1:"Final"
-    }
 
     print("\n", partidoClasi[tipoPartido].center(74,"-"),"\n")
 
@@ -38,10 +41,14 @@ def eliminaciones(diccionario, seleccionesClasificadas, miEquipo, tipoPartido):
                 goals = partidoJugador.partidoPlayer(miEquipo, rival, diccionario, "eliminacion")
                 if goals[0] > goals[1]:
                     seleccionesClasificadasAux.append(miEquipo)
-                    print(("Campeón del Mundo 🏆: " + diccionario[miEquipo]["nombre"].upper()).center(74))
+                    diccionario[miEquipo]["mayorPosicion"] = "CAMPEON"
+                    print((diccionario[miEquipo]["nombre"]+" "+str(goals[0])).rjust(37),"-",str(goals[1]),diccionario[rival]["nombre"])
+                    print(("Campeón del Mundo🏆: " + diccionario[miEquipo]["nombre"].upper()).center(74))
                 elif goals[0] < goals[1]:
                     seleccionesClasificadasAux.append(rival)
-                    print(("Campeón del Mundo 🏆: " + diccionario[rival]["nombre"].upper()).center(74))
+                    diccionario[miEquipo]["mayorPosicion"] = "SUBCAMPEON"
+                    print((diccionario[miEquipo]["nombre"]+" "+str(goals[0])).rjust(37),"-",str(goals[1]),diccionario[rival]["nombre"])
+                    print(("Campeón del Mundo🏆: " + diccionario[rival]["nombre"].upper()).center(74))
                 else:
                     seleccionesClasificadasAux.append(goals[2])
                 
@@ -55,13 +62,12 @@ def eliminaciones(diccionario, seleccionesClasificadas, miEquipo, tipoPartido):
 
             print((diccionario[id_team_a]["nombre"]+" "+str(resultado[0][1])).rjust(37),"-",str(resultado[1][1]),diccionario[id_team_b] ["nombre"])
             if resultado[0][1] > resultado[1][1]:
-                print(("Campeón del Mundo 🏆: " + diccionario[id_team_a]["nombre"].upper()).center(74))
+                print(("Campeón del Mundo🏆: " + diccionario[id_team_a]["nombre"].upper()).center(74))
             elif resultado[0][1] < resultado[1][1]:
-                print(("Campeón del Mundo 🏆: " + diccionario[id_team_b]["nombre"].upper()).center(74))
+                print(("Campeón del Mundo🏆: " + diccionario[id_team_b]["nombre"].upper()).center(74))
 
     else:
         'Se juegan desde octavos hasta semis'
-
         while i < len(seleccionesClasificadas) / 2:
             id_team_a = seleccionesClasificadas[equipo1]
             id_team_b = seleccionesClasificadas[equipo2]
@@ -83,7 +89,6 @@ def eliminaciones(diccionario, seleccionesClasificadas, miEquipo, tipoPartido):
                 RESULTADOS.append(resultado[1][1])
                 EQUIPOS.append(miEquipo)
                 EQUIPOS.append(rival)
-                
             else:
                 resultado = faseGrupos.partido(diccionario, id_team_a, id_team_b)
                 while resultado[0][1] == resultado[1][1]:
@@ -93,8 +98,7 @@ def eliminaciones(diccionario, seleccionesClasificadas, miEquipo, tipoPartido):
                 RESULTADOS.append(resultado[1][1])
                 EQUIPOS.append(id_team_a)
                 EQUIPOS.append(id_team_b)
-                
-                
+                  
                 diccionario[id_team_a]["datos"][2] += resultado[0][1]
                 diccionario[id_team_b]["datos"][2] += resultado[1][1]
 
@@ -105,14 +109,12 @@ def eliminaciones(diccionario, seleccionesClasificadas, miEquipo, tipoPartido):
 
             equipo1 += 4
             equipo2 += 4
-
             i += 1
 
             if i == (len(seleccionesClasificadas) / 2) / 2:
                 equipo1 = 1
                 equipo2 = 3
     
-
         for i in range(0, len(RESULTADOS)-1, 2):
             equipo1 = diccionario[EQUIPOS[i]]["nombre"]
             equipo2 = diccionario[EQUIPOS[i+1]]["nombre"]
@@ -123,4 +125,4 @@ def eliminaciones(diccionario, seleccionesClasificadas, miEquipo, tipoPartido):
     time.sleep(2)
 
     if tipoPartido > 1:
-        eliminaciones(SELECCIONES, seleccionesClasificadas, 8, tipoPartido/2)
+        eliminaciones(diccionario, seleccionesClasificadas, miEquipo, tipoPartido/2)
