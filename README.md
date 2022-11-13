@@ -1,4 +1,4 @@
-# World Cup Simulator Qatar 2022
+# World Cup Simulator Qatar 2022🏆
 ![](img/header.jpg)
 
 ## Descripción
