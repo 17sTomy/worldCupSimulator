@@ -27,9 +27,6 @@ def equipos_elegibles(equipos_disponibles):
     
     print()
 
-    pass
-
-
 
 def seleccionar_equipo(dic_fase_de_grupos):
     
@@ -187,6 +184,7 @@ def mostrar_historial():
     
     ranking_ordenado = sorted(ranking, key = lambda juego: (juego[INSTANCIA], -juego[RANKING]))
     
+    print()
     print("\t¡RANKING HISTORICO DE PARTIDAS!\n")
     
     for juego in ranking_ordenado:
@@ -194,13 +192,10 @@ def mostrar_historial():
         puesto += 1
     
     historial.close()
-        
-    pass
-
 
 
 def partida(diccionario):
-    
+
     """
     Esta funcion determina si hay que retomar
     o no una partida dependiendo del usuario
@@ -220,7 +215,7 @@ def partida(diccionario):
     
     else:
         print("\nParece que hay una partida ya guardada con tu usuario y equipo elegidos")
-        retomar = input("¿Desea retomar la partida guardada? (Ingrese cualquier tecla, sino ingrese ENTER.): ").upper()
+        retomar = input("¿Desea retomar la partida guardada? (Ingrese cualquier tecla para retomar la partida, sino ingrese ENTER): ").upper()
         
         if retomar:
             diccionario = retomar_partida(usuario, equipo)

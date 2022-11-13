@@ -12,9 +12,8 @@ def eliminaciones(diccionario, seleccionesClasificadas, miEquipo, tipoPartido):
         2:"Semifinal",
         1:"Final"
     }
-    
+
     if miEquipo not in seleccionesClasificadas and tipoPartido == 8:
-        print(miEquipo, seleccionesClasificadas)
         diccionario[miEquipo]["mayorPosicion"] = "FASE DE GRUPOS"
     elif miEquipo not in seleccionesClasificadas and diccionario[miEquipo]["mayorPosicion"] == "":
         diccionario[miEquipo]["mayorPosicion"] = partidoClasi[tipoPartido*2].upper()
