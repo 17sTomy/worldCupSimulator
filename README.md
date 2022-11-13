@@ -1,4 +1,5 @@
 # World Cup Simulator Qatar 2022
+![](img/header.jpg)
 
 ## Descripción
 Juego para el segundo parcial de Programación I programado con Python que simula la trayectoria del Mundial Qatar 2022. Elegí tu equipo, y tratá de ganar la del mundo.
