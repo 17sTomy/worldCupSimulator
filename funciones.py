@@ -25,9 +25,8 @@ def ejectProgressBar():
 
 def clasificados(tabla_general):
     """ 
-    Devuelve un array con todos los equipos que pasan a la siguiente ronda
-    """
-    
+    Devuelve un array con todos los equipos que pasan a la siguiente ronda usando la tabla
+    """ 
     CLASIFICADOS = []
     for grupo in range(len(tabla_general)):
         for fila in range(1, 3):
@@ -36,7 +35,7 @@ def clasificados(tabla_general):
 
 def clasificados2(diccionario):
     """ 
-    Devuelve un array con todos los equipos que pasan a la siguiente ronda
+    Devuelve un array con todos los equipos que pasan a la siguiente ronda usando el diccionario
     """
     GRUPOS = ["A","B","C","D","E","F","G","H"]
     CLASIFICADOS = []
@@ -58,7 +57,6 @@ def clasificados2(diccionario):
                     CLASIFICADOS.append(dicc)
                     break
                 dicc += 1
-    print(CLASIFICADOS)   
     return CLASIFICADOS
 
 
