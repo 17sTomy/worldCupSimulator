@@ -184,6 +184,8 @@ def partidoPlayer(miEquipo, rival, diccionario, tipoPartido):
             ganador = miEquipo
         else:
             ganador = rival
+            print(diccionario)
+        print()
         print("Pita el arbitro, se terminó el partido...")
         print()
 
