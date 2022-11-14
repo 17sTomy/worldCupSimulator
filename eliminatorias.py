@@ -32,13 +32,10 @@ def eliminaciones(diccionario, seleccionesClasificadas, miEquipo, tipoPartido):
 
     print("\n", partidoClasi[tipoPartido].center(74,"-"),"\n")
 
-    if tipoPartido == 1:
-
-        # Se esta jugando la final 
+    if tipoPartido == 1: # Se esta jugando la final 
         id_team_a = seleccionesClasificadas[0]
         id_team_b = seleccionesClasificadas[1]
 
-        
         #Si el equipo del jugador se encuentra aun en juego se procedera a ir por esta via
         if (miEquipo == id_team_a) or (miEquipo == id_team_b):
             #Se determina cual sera el equipo del jugador y su rival
@@ -52,10 +49,15 @@ def eliminaciones(diccionario, seleccionesClasificadas, miEquipo, tipoPartido):
             if goals[0] > goals[1]:
                 diccionario[miEquipo]["mayorPosicion"] = "CAMPEON"
                 jugarFinal(goals, diccionario, miEquipo, rival)
-            
             elif goals[0] < goals[1]:
                 diccionario[miEquipo]["mayorPosicion"] = "SUBCAMPEON"
                 jugarFinal(goals, diccionario, rival, miEquipo)
+            else:
+                if goals[2] == miEquipo:
+                    diccionario[miEquipo]["mayorPosicion"] = "CAMPEON"
+                else:
+                    diccionario[miEquipo]["mayorPosicion"] = "SUBCAMPEON"
+                seleccionesClasificadasAux.append(goals[2])
             
             diccionario[miEquipo]["datos"][2] += goals[0]
             diccionario[rival]["datos"][2] += goals[1]
