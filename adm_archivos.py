@@ -1,9 +1,7 @@
 from paises import paises
 from os import remove
 
-
 def equipos_elegibles(equipos_disponibles):
-    
     """
     Esta funcion recibe una lista de pasises por parametro
     y los imprime por pantalla en tres columnas para que
@@ -24,9 +22,7 @@ def equipos_elegibles(equipos_disponibles):
         print()
         piso += 4
         techo += 4
-    
     print()
-
 
 def seleccionar_equipo(dic_fase_de_grupos):
     
@@ -188,7 +184,7 @@ def mostrar_historial():
     print("\t¡RANKING HISTORICO DE PARTIDAS!\n")
     
     for juego in ranking_ordenado:
-        print("Puesto", puesto, "{}, equipo: {}. Llegó hasta {}.".format(juego[USUARIO], juego[EQUIPO], fases_del_mundial[int(juego[INSTANCIA])]))
+        print("Puesto", puesto, "{}, Equipo: {}. Llegó hasta {}.".format(juego[USUARIO], juego[EQUIPO], fases_del_mundial[int(juego[INSTANCIA])]))
         puesto += 1
     
     historial.close()

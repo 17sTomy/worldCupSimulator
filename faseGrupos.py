@@ -1,5 +1,4 @@
 import random
-import paises #Diccionario
 import partidoJugador
 
 # FUNCTIONS

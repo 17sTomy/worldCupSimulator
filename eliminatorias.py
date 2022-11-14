@@ -1,8 +1,5 @@
-import random
 import time
 import partidoJugador
-import funciones
-import paises
 import faseGrupos
 
 def eliminaciones(diccionario, seleccionesClasificadas, miEquipo, tipoPartido):
@@ -48,10 +45,10 @@ def eliminaciones(diccionario, seleccionesClasificadas, miEquipo, tipoPartido):
             #Determinamos al ganador dependiendo sus goles, luego procedemos a actualizar datos necesarios para despues
             if goals[0] > goals[1]:
                 diccionario[miEquipo]["mayorPosicion"] = "CAMPEON"
-                jugarFinal(goals, diccionario, miEquipo, rival)
+                jugarFinal(goals[0], goals[1], diccionario, miEquipo, miEquipo, rival)
             elif goals[0] < goals[1]:
                 diccionario[miEquipo]["mayorPosicion"] = "SUBCAMPEON"
-                jugarFinal(goals, diccionario, rival, miEquipo)
+                jugarFinal(goals[0], goals[1], diccionario, rival, miEquipo, rival)
             else:
                 if goals[2] == miEquipo:
                     diccionario[miEquipo]["mayorPosicion"] = "CAMPEON"
@@ -142,6 +139,6 @@ def eliminaciones(diccionario, seleccionesClasificadas, miEquipo, tipoPartido):
         eliminaciones(diccionario, seleccionesClasificadas, miEquipo, tipoPartido/2)
 
 
-def jugarFinal(goals, diccionario, equipoGanador, equipoPerdedor):
-        print((diccionario[equipoGanador]["nombre"]+" "+str(goals[0])).rjust(37),"-",str(goals[1]),diccionario[equipoPerdedor]["nombre"])
+def jugarFinal(golesAFavor, golesEnContra, diccionario, equipoGanador, miEquipo, rival):
+        print((diccionario[miEquipo]["nombre"]+" "+str(golesAFavor)).rjust(37),"-",str(golesEnContra), diccionario[rival]["nombre"])
         print(("Campeón del Mundo🏆: " + diccionario[equipoGanador]["nombre"].upper()).center(74))
